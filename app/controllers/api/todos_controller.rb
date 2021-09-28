@@ -23,6 +23,7 @@ class Api::TodosController < ApplicationController
       render json: @todo
     else
       render json: { errors: @todo.errors }, status: :unprocessable_entity
+    end
   end
 
   def update

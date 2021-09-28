@@ -1,11 +1,19 @@
 Rails.application.routes.draw do
-  # api endpoints
+  # api endpoints 
   # all routes in the api namespace, 
-  # allow rails and react to communicate with each other
-  # no more nav routes
+  # allow rails and react to communicate to each other
+  # no more nav route 
+  # no root route 
+
   namespace :api do
+
     resources :todos do
       resources :comments
     end
+
+    resources :comments do
+      resources :likes 
+    end
   end
+
 end
